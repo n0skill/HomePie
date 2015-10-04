@@ -1,0 +1,38 @@
+Cmp-Mod V01 Created by CvPcb (2013-may-18)-stable date = lun 17 aoû 2015 11:44:21 CEST
+
+BeginCmp
+TimeStamp = /55D1ACCA;
+Reference = BT1;
+ValeurCmp = BATTERY;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /55D1A42E;
+Reference = IC1;
+ValeurCmp = ATTINY85-P;
+IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /55D1A41A;
+Reference = P1;
+ValeurCmp = CONN_4X2;
+IdModule  = pin_array_4x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /55D1A484;
+Reference = R1;
+ValeurCmp = RVAR;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /55D1A493;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+EndListe
