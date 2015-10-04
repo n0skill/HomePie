@@ -24,7 +24,6 @@ class SensorRadio:
         # Radio setup
         pipes = [[0xe7, 0xe7, 0xe7, 0xe7, 0xe7], [0xc2, 0xc2, 0xc2, 0xc2, 0xc2]]
         self.radio = NRF24(GPIO, spidev.SpiDev())
-
         self.radio.begin(0, 25)
         self.radio.setRetries(15,15)
         self.radio.setDataRate(NRF24.BR_1MBPS)
@@ -36,13 +35,12 @@ class SensorRadio:
         self.radio.startListening()
         self.radio.stopListening()
         self.radio.printDetails()
+
     def listen(self):
-        print ''
         self.pipe = [0]
         self.feeds = []
         self.recv_buffer = []
         self.radio.startListening()
-
         while not self.radio.available(self.pipe):
             # We listen for a while
             time.sleep(10000/1000000.0)
@@ -54,7 +52,6 @@ class SensorRadio:
             return self.recv_buffer
         else:
             print 'length of packet is wierd. Ignore.'
-            print self.recv_buffer
             self.radio.stopListening()
             self.radio.startListening()
             return None

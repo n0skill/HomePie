@@ -59,11 +59,21 @@ try:
     rad = SensorRadio()
     while(True):
         buff = rad.listen()
+        print buff
         if buff is not None:
-            sensor = Sensor(buff[0], buff[1], buff[2])
+            newsensor = Sensor(buff[0], buff[1], buff[3])
             # Todo: Add the sensor to the list if needed
-            print buff
-        time.sleep(2)
+            if any(oldsensor.idx == newsensor.idx for oldsensor in sensors):
+                for oldsensor in sensors:
+                    if oldsensor.idx == newsensor.idx:
+                        oldsensor.value = newsensor.value
+                        print 'Already in list. Update the values'
+                        time.sleep(1)
+            else:
+                sensors.append(newsensor)
+        listToJson(sensors)
+        time.sleep(1)
+
 except KeyboardInterrupt:
     print 'Got interrupt from keyboard'
     GPIO.cleanup()
