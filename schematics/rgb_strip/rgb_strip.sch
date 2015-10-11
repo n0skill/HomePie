@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "19 aug 2015"
+Date "9 oct 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -336,10 +336,21 @@ Wire Wire Line
 	3600 2100 3600 2200
 Wire Wire Line
 	3600 2200 3700 2200
-Text GLabel 6550 2100 2    60   Input ~ 0
+Text GLabel 7050 1950 2    60   Input ~ 0
 PWM_R
-Text GLabel 6550 2250 2    60   Input ~ 0
+Text GLabel 7050 2200 2    60   Input ~ 0
 PWM_R
-Text GLabel 6600 1900 2    60   Input ~ 0
+Text GLabel 7050 1700 2    60   Input ~ 0
 PWM_R
+$Comp
+L CONN_4X2 P?
+U 1 1 5617F9A3
+P 7200 1150
+F 0 "P?" H 7200 1400 50  0000 C CNN
+F 1 "CONN_4X2" V 7200 1150 40  0000 C CNN
+F 2 "~" H 7200 1150 60  0000 C CNN
+F 3 "~" H 7200 1150 60  0000 C CNN
+	1    7200 1150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
