@@ -1,8 +1,21 @@
-import RPi.GPIO as GPIO
-import spidev
+#import RPi.GPIO as GPIO
+#import spidev
+import json
 import time
 import Queue
-from lib_nrf24 import NRF24
+#from lib_nrf24 import NRF24
+
+def logToJSON():
+    threading.Timer(10.0, logToJSON).start()
+    lastFeeds = []
+    with open(LOGFILE, mode='r') as oldlog:
+        lastFeeds = json.load(oldlog)
+    with open(LOGFILE, 'w') as log:
+        logJSON = {}
+        logJSON['timestamp'] = time.time()
+        logJSON['value'] = 3
+        lastFeeds.append(logJSON)
+        json.dump(lastFeeds, log, indent=4);
 
 class Sensor:
     def __init__(self, idx, sensorType, value):
