@@ -1,9 +1,9 @@
-#import RPi.GPIO as GPIO
-#import spidev
+import RPi.GPIO as GPIO
+import spidev
 import json
 import time
 import Queue
-#from lib_nrf24 import NRF24
+from lib_nrf24 import NRF24
 
 def logToJSON():
     threading.Timer(10.0, logToJSON).start()

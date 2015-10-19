@@ -20,7 +20,7 @@ function getData()
 			tbl_body += "<td><a href=\"details.html\">Details " + value['id'] + "</a></td>";
 			tbl_body += "</tr>";
 			});
-		$("#tata").find("tr:gt(0)").remove();
-		$("#tata").find('tbody:last').append(tbl_body);
+		$("#datas").find("tr:gt(0)").remove();
+		$("#datas").find('tbody:last').append(tbl_body);
 		});
 }
